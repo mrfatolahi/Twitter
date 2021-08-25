@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/Twitter</property>
+        <property name="connection.username">admin</property>
+        <property name="connection.password">99710044mki98</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">100</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">false</property>
+
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Names the annotated entity class -->
+        <mapping class="saversandloaders.database.models.dbmessagingmodels.DBChat"/>
+        <mapping class="saversandloaders.database.models.dbmessagingmodels.DBChatMessage"/>
+        <mapping class="saversandloaders.database.models.dbmessagingmodels.DBGroup"/>
+        <mapping class="saversandloaders.database.models.dbmessagingmodels.DBGroupMessage"/>
+        <mapping class="saversandloaders.database.models.dbothermodels.DBFollowRequest"/>
+        <mapping class="saversandloaders.database.models.dbothermodels.DBRFollowRequest"/>
+        <mapping class="saversandloaders.database.models.dbothermodels.DBSystemMessage"/>
+<!--        <mapping class="saversandloaders.database.models.dbtimemodels.DBMDate"/>-->
+        <mapping class="saversandloaders.database.models.dbtimemodels.DBMDateTime"/>
+        <mapping class="saversandloaders.database.models.dbtweetmodels.DBComment"/>
+        <mapping class="saversandloaders.database.models.dbtweetmodels.DBLike"/>
+        <mapping class="saversandloaders.database.models.dbtweetmodels.retweetmodels.DBRetweet"/>
+        <mapping class="saversandloaders.database.models.dbtweetmodels.retweetmodels.DBRetweetComment"/>
+        <mapping class="saversandloaders.database.models.dbtweetmodels.DBTag"/>
+        <mapping class="saversandloaders.database.models.dbtweetmodels.DBTweet"/>
+        <mapping class="saversandloaders.database.models.dbusermodels.DBUser"/>
+        <mapping class="saversandloaders.database.models.dbusermodels.DBUserInfo"/>
+        <mapping class="saversandloaders.database.models.dbbotinfomodels.DBBotInfo"/>
+
+    </session-factory>
+
+</hibernate-configuration>

@@ -1,0 +1,40 @@
+{
+  "text" : "knn;blbl",
+  "imagePath" : "",
+  "userId" : 1,
+  "userUsername" : "q",
+  "userProfileImagePath" : "src/main/resources/images/defaultProfilePicture.png",
+  "timesReported" : 0,
+  "comments" : [ ],
+  "likes" : [ {
+    "userId" : 1,
+    "tweetId" : 0,
+    "dateAndTimeCreated" : {
+      "year" : 2021,
+      "month" : 8,
+      "day" : 8,
+      "hour" : 17,
+      "minute" : 58
+    }
+  }, {
+    "userId" : 2,
+    "tweetId" : 0,
+    "dateAndTimeCreated" : {
+      "year" : 2021,
+      "month" : 8,
+      "day" : 8,
+      "hour" : 18,
+      "minute" : 28
+    }
+  } ],
+  "tags" : [ ],
+  "retweets" : [ ],
+  "id" : 0,
+  "dateAndTimeCreated" : {
+    "year" : 2021,
+    "month" : 8,
+    "day" : 8,
+    "hour" : 17,
+    "minute" : 58
+  }
+}

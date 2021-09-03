@@ -39,7 +39,7 @@ public class DBUser {
     private int birthdateMonth;
     private int birthdateYear;
     private boolean active;
-    private boolean birthdate_visibility;
+    private boolean birthdateVisible;
     private boolean Private;
     private boolean disabled;
     private boolean deleted;
@@ -182,12 +182,12 @@ public class DBUser {
         this.active = active;
     }
 
-    public boolean isBirthdate_visibility() {
-        return birthdate_visibility;
+    public boolean isBirthdateVisible() {
+        return birthdateVisible;
     }
 
-    public void setBirthdate_visibility(boolean birthdate_visibility) {
-        this.birthdate_visibility = birthdate_visibility;
+    public void setBirthdateVisible(boolean birthdate_visibility) {
+        this.birthdateVisible = birthdate_visibility;
     }
 
     public boolean isPrivate() {
@@ -414,7 +414,7 @@ public class DBUser {
                 ", \nbio='" + bio + '\'' +
                 ", \nprofileImagePath='" + profileImagePath + '\'' +
                 ", \nactive=" + active +
-                ", \nbirthdate_visibility=" + birthdate_visibility +
+                ", \nbirthdate_visibility=" + birthdateVisible +
                 ", \nPrivate=" + Private +
                 ", \ndisabled=" + disabled +
                 ", \ndeleted=" + deleted +
@@ -451,7 +451,7 @@ public class DBUser {
         this.setBio(reference.getBio());
         this.setProfileImagePath(reference.getProfileImagePath());
         this.setActive(reference.isActive());
-        this.setBirthdate_visibility(reference.isBirthdate_visibility());
+        this.setBirthdateVisible(reference.isBirthdateVisible());
         this.setPrivate(reference.isPrivate());
         this.setDisabled(reference.isDisabled());
         this.setDeleted(reference.isDeleted());

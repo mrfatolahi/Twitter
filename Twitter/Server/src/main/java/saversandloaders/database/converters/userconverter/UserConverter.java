@@ -52,7 +52,7 @@ public class UserConverter {
         dbUser.setBirthdateMonth(user.getBirthdate().getMonth());
         dbUser.setBirthdateDay(user.getBirthdate().getDay());
         dbUser.setActive(user.isActive());
-        dbUser.setBirthdate_visibility(user.isBirthdate_visibility());
+        dbUser.setBirthdateVisible(user.isBirthdateVisible());
         dbUser.setPrivate(user.isPrivate());
         dbUser.setDisabled(user.isDisabled());
         dbUser.setDeleted(user.isDeleted());
@@ -116,7 +116,7 @@ public class UserConverter {
             dbUser.getSystemMassages().add(SystemMessageConverter.convertSystemMessageToDBSystemMessage(systemMassage));
         }
 
-        for (Tag tag : user.getUsed_tags()){
+        for (Tag tag : user.getUsedTags()){
             dbUser.getUsedTags().add(TagConverter.convertTagToDBTag(tag));
         }
 
@@ -154,7 +154,7 @@ public class UserConverter {
         user.setBirthdate(new MDate(dbUser.getBirthdateYear(), dbUser.getBirthdateMonth(), dbUser.getBirthdateDay()));
         user.setProfileImagePath(dbUser.getProfileImagePath());
         user.setActive(dbUser.isActive());
-        user.setBirthdate_visibility(dbUser.isBirthdate_visibility());
+        user.setBirthdateVisible(dbUser.isBirthdateVisible());
         user.setPrivate(dbUser.isPrivate());
         user.setDisabled(dbUser.isDisabled());
         user.setDeleted(dbUser.isDeleted());
@@ -237,7 +237,7 @@ public class UserConverter {
         for (DBTag dbTag : dbUser.getUsedTags()){
             r.add(TagConverter.convertDBTagToTag(dbTag));
         }
-        user.setUsed_tags(r);
+        user.setUsedTags(r);
 
         ArrayList<Chat> h = new ArrayList<>();
         ArrayList<Chat> w = new ArrayList<>();

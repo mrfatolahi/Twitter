@@ -54,7 +54,7 @@ public class LUserLogicalAgent implements LogicEventManager {
         user.setPhonenumber(lodedUser.getPhonenumber());
         user.setBio(lodedUser.getBio());
         user.setLastseen(lodedUser.getLastseen());
-        user.setBirthdate_visibility(lodedUser.isBirthdate_visibility());
+        user.setBirthdateVisible(lodedUser.isBirthdateVisible());
         user.setPrivate(lodedUser.isPrivate());
         user.setActive(lodedUser.isActive());
         user.setTweets(lodedUser.getTweets());
@@ -69,7 +69,7 @@ public class LUserLogicalAgent implements LogicEventManager {
         user.setSentFollowRequests(lodedUser.getSentFollowRequests());
         user.setReceivedFollowRequests(lodedUser.getReceivedFollowRequests());
         user.setSystemMassages(lodedUser.getSystemMassages());
-        user.setUsed_tags(lodedUser.getUsed_tags());
+        user.setUsedTags(lodedUser.getUsedTags());
         user.setChats(lodedUser.getChats());
         user.setGroups(lodedUser.getGroups());
         user.setChatsWithBots(lodedUser.getChatsWithBots());
@@ -91,9 +91,9 @@ public class LUserLogicalAgent implements LogicEventManager {
     }
 
     public void addTweet(Tweet tweet) throws IOException {
-        ArrayList<Tag> userUsedtags= new ArrayList<Tag>(user.getUsed_tags());
+        ArrayList<Tag> userUsedtags= new ArrayList<Tag>(user.getUsedTags());
         userUsedtags.addAll(tweet.getTags());
-        user.setUsed_tags(userUsedtags);
+        user.setUsedTags(userUsedtags);
         user.getTweets().add(tweet);
         UserSaver.saveUser(user);
     }

@@ -15,7 +15,6 @@ import models.tweet.Tweet;
 import models.user.information.*;
 import saversandloaders.UserIdGenerator;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -46,11 +45,11 @@ public class User {
     private ArrayList<FollowRequest> sentFollowRequests;
     private ArrayList<FollowRequest> receivedFollowRequests;
     private ArrayList<SystemMassage> systemMassages;
-    private ArrayList<Tag> used_tags;
+    private ArrayList<Tag> usedTags;
     private ArrayList<Chat> chats;
     private ArrayList<Chat> chatsWithBots;
     private ArrayList<Group> groups;
-    private boolean birthdate_visibility;
+    private boolean birthdateVisible;
     private boolean Private;
     private boolean disabled;
     private boolean deleted;
@@ -75,7 +74,7 @@ public class User {
         this.bio = bio;
         this.Id = UserIdGenerator.generateAnId();
         this.lastseen = MDateTime.now();
-        this.birthdate_visibility = false;
+        this.birthdateVisible = false;
         this.Private = false;
         this.active = true;
         this.tweets = new ArrayList<Tweet>();
@@ -90,7 +89,7 @@ public class User {
         this.sentFollowRequests = new ArrayList<FollowRequest>();
         this.receivedFollowRequests = new ArrayList<FollowRequest>();
         this.systemMassages = new ArrayList<SystemMassage>();
-        this.used_tags = new ArrayList<Tag>();
+        this.usedTags = new ArrayList<Tag>();
         this.chats = new ArrayList<Chat>();
         this.groups = new ArrayList<Group>();
         this.chatsWithBots = new ArrayList<>();
@@ -311,12 +310,12 @@ public class User {
         this.systemMassages = systemMassages;
     }
 
-    public ArrayList<Tag> getUsed_tags() {
-        return used_tags;
+    public ArrayList<Tag> getUsedTags() {
+        return usedTags;
     }
 
-    public void setUsed_tags(ArrayList<Tag> used_tags) {
-        this.used_tags = used_tags;
+    public void setUsedTags(ArrayList<Tag> usedTags) {
+        this.usedTags = usedTags;
     }
 
     public ArrayList<Chat> getChats() {
@@ -327,12 +326,12 @@ public class User {
         this.chats = chats;
     }
 
-    public boolean isBirthdate_visibility() {
-        return birthdate_visibility;
+    public boolean isBirthdateVisible() {
+        return birthdateVisible;
     }
 
-    public void setBirthdate_visibility(boolean birthdate_visibility) {
-        this.birthdate_visibility = birthdate_visibility;
+    public void setBirthdateVisible(boolean birthdateVisible) {
+        this.birthdateVisible = birthdateVisible;
     }
 
     public boolean isPrivate() {
@@ -491,10 +490,10 @@ public class User {
                 "\n, sentFollowRequests=" + sentFollowRequests +
                 "\n, receivedFollowRequests=" + receivedFollowRequests +
                 "\n, systemMassages=" + systemMassages +
-                "\n, used_tags=" + used_tags +
+                "\n, used_tags=" + usedTags +
                 "\n, chats=" + chats +
                 "\n, groups=" + groups +
-                "\n, birthdate_visibility=" + birthdate_visibility +
+                "\n, birthdate_visibility=" + birthdateVisible +
                 "\n, Private=" + Private +
                 "\n, disabled=" + disabled +
                 "\n, deleted=" + deleted +
